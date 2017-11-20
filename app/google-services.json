@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "374039635241",
+    "firebase_url": "https://prac-c201d.firebaseio.com",
+    "project_id": "prac-c201d",
+    "storage_bucket": "prac-c201d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374039635241:android:abac839708badab8",
+        "android_client_info": {
+          "package_name": "app.com.prac"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374039635241-ggjr5rjsg4irfsbugh8mgdb8qbm8tb28.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAMxBKSljnYSeBCGvnNT9V7ZfMmrCi2Hk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
