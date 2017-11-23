@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     EditText password;
     Button submit;
     TextView loginLink;
+    TextView registering;
     private FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 registerUser();
             }
         });
+
         loginLink =(TextView) findViewById(R.id.loginLink);
         loginLink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,10 +46,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, Login.class));
             }
         });
+        registering = (TextView) findViewById(R.id.registering);
     }
-
+    //This is the method that is used to register the user
     public void registerUser()
     {
+        //This captures the username and password from the page
         String emailString = email.getText().toString();
         String passwordString = password.getText().toString();
         if(TextUtils.isEmpty(emailString))
@@ -60,16 +64,26 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Please enter your password.", Toast.LENGTH_SHORT).show();
             return;
         }
-        firebaseAuth.createUserWithEmailAndPassword(emailString, passwordString)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(MainActivity.this, "Registration complete", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(MainActivity.this, Login.class));
-                        }
+        //This makes use of firebase Authenticaation to login
+        try {
+            registering.setText("Registering new user...");
+            firebaseAuth.createUserWithEmailAndPassword(emailString, passwordString)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(Task<AuthResult> task) {
 
-                    }
-                });
+                            if (task.isSuccessful()) {
+                                Toast.makeText(MainActivity.this, "Registration complete", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(MainActivity.this, Login.class));
+                            }
+
+                        }
+                    });
+        }
+        catch(Exception e)
+        {
+            registering.setText("");
+            Toast.makeText(this, "Please check your internet connection and try again.", Toast.LENGTH_SHORT).show();
+        }
     }
 }

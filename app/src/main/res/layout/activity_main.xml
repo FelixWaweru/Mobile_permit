@@ -66,6 +66,18 @@
         android:gravity="center"
         android:layout_alignParentRight="true"/>
     <TextView
+        android:id="@+id/registering"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/loginLink"
+        android:layout_alignEnd="@+id/banner"
+        android:layout_alignRight="@+id/banner"
+        android:fontFamily="sans-serif-light"
+        android:text=""
+        android:gravity="center"
+        android:textColor="#20B2AA"
+        android:textSize="20dp" />
+    <TextView
         android:text="Already have an account? Click here to log in."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

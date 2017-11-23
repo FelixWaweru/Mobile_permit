@@ -58,13 +58,40 @@
     <Button
         android:text="Submit"
         android:background="#008B8B"
-        android:id="@+id/submit"
+        android:id="@+id/loginSubmit"
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_below="@+id/loginPassword"
-        android:onClick="Submit"
+        android:onClick="loginSubmit"
         android:gravity="center"
         android:layout_alignParentRight="true"/>
+
+    <TextView
+        android:id="@+id/regLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/loginSubmit"
+        android:layout_marginTop="29dp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:onClick="regLink"
+        android:text="Don't have an account? Click here to sign up."
+        android:textColor="#20B2AA"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/loggingin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/loginSubmit"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#20B2AA"
+        android:textSize="20dp" />
 
 
 </RelativeLayout>
